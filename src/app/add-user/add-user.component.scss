@@ -1,0 +1,38 @@
+.add-user {
+    height: 100vh;
+    .card {
+        width: 50%;
+        margin: 0 auto;
+        border-width: 0.2rem;
+    }
+}
+
+.card-header {
+    h4 {
+        margin-bottom: 0;
+    }
+}
+
+.add-user-form {
+    .form-group {
+        position: relative;
+        margin-bottom: 2rem;
+        .alert-danger {
+            background: none;
+            border: none;
+            padding: 0.125rem 0.75rem 0.125rem 0;
+            position: absolute;
+            color: #f00;
+            font-size: 0.8rem;
+            line-height: 1rem;
+        }
+    }
+
+    button[type="submit"] {
+        margin-right: 2%;
+    }
+
+    .btn-primary:disabled {
+        cursor: auto;
+    }
+}

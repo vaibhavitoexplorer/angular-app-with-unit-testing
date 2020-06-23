@@ -1,0 +1,43 @@
+<div class="add-user d-flex align-items-center">
+    <div class="card">
+        <div class="card-header">
+            <h4>Add User</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="addUserForm" (ngSubmit)="createUser(addUserForm.value)" class="add-user-form">
+
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" formControlName="first_name">
+                    <div *ngIf="addUserForm.controls.first_name.errors?.pattern" class="alert alert-danger">
+                        Invalid input.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" formControlName="last_name">
+                    <div *ngIf="addUserForm.controls.last_name.errors?.pattern" class="alert alert-danger">
+                        Invalid input.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        formControlName="email">
+                    <div *ngIf="addUserForm.controls.email.touched && addUserForm.controls.email.invalid"
+                        class="alert alert-danger">
+                        <div *ngIf="addUserForm.controls.email.errors.email">Please, enter valid email address.</div>
+                    </div>
+                </div>
+                <div class="alert alert-success" role="alert">
+                    User Successfully Created!
+                </div>
+                <button class="btn btn-primary" type="submit"
+                    [disabled]="addUserForm.invalid || !addUserForm.controls.first_name.dirty">
+                    Create User
+                </button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>
